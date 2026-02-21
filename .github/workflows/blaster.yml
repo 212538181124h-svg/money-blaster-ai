@@ -1,0 +1,14 @@
+name: MONEY_BLASTER_AI
+on:
+  schedule:
+    - cron: '*/30 * * * *' # 30分おきに即金案件を巡回
+  workflow_dispatch:
+jobs:
+  blast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: AI Opportunity Hunter
+        run: |
+          node engine.js
+
